@@ -17,8 +17,8 @@ RUN apt-get update \
 		/var/log/*
 
 RUN --mount=type=bind,source=requirements.txt,target=/tmp/requirements.txt \
-		python3 -m pip install --root-user-action --break-system-packages --upgrade pip setuptools && \
-		python3 -m pip install --root-user-action --break-system-packages -r /tmp/requirements.txt
+		python3 -m pip install --root-user-action=ignore --break-system-packages --upgrade pip setuptools && \
+		python3 -m pip install --root-user-action=ignore --break-system-packages -r /tmp/requirements.txt
 
 # Publish the source repository
 LABEL org.opencontainers.image.source https://github.com/TexasInstruments/processor-sdk-doc
