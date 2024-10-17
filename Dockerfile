@@ -6,7 +6,7 @@ ARG USER_UID=1000
 ARG DEBIAN_FRONTEND noninteractive
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
-		python3-sphinx \
+		python3-sphinx python3-pip \
 	&& echo "**** cleanup ****" \
 	&& apt-get autoremove \
 	&& apt-get clean \
